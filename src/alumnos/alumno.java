@@ -20,4 +20,33 @@ public class alumno {
         this.correo = correo;
         this.discapacidad = discapacidad;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApaterno(){
+        return apaterno;
+    }
+
+    public String getAMaterno() {
+        return amaterno;
+    }
+
+    public String getCURP() {
+        return CURP;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public boolean isDiscapacidad() {
+        return discapacidad;
+    }
+
 }
