@@ -24,6 +24,7 @@ public class frmAlumnos extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         setContentPane(pnlPrincipal);
+        pack();
         //se debe poblar al iniciar la ventana para que ya tenga la informacion en el combo box
         poblarComboBox();
         setLocationRelativeTo(null);
@@ -76,7 +77,7 @@ public class frmAlumnos extends JFrame{
         String curp = txtCurp.getText();
         Boolean discapacidad = chkDiscapacidad.isSelected();
 
-        alumno dato = new alumno(nombre, paterno, materno, curp, telefono, correo, discapacidad);
+        alumno dato = new alumno(nombre, paterno, materno, curp, telefono, correo, sexo, discapacidad);
 
         if(botonGuardarListener != null){
             botonGuardarListener.guardando(dato);

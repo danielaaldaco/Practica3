@@ -8,9 +8,10 @@ public class alumno {
     private String telefono;
     private String correo;
     private boolean discapacidad;
+    private String sexo;
     private int edad;
 
-    public alumno(String nombre, String apaterno, String amaterno, String CURP, String telefono, String correo
+    public alumno(String nombre, String apaterno, String amaterno, String CURP, String telefono, String correo, String sexo
     , boolean discapacidad) {
         this.nombre = nombre;
         this.apaterno = apaterno;
@@ -18,6 +19,7 @@ public class alumno {
         this.CURP = CURP;
         this.telefono = telefono;
         this.correo = correo;
+        this.sexo = sexo;
         this.discapacidad = discapacidad;
     }
 
@@ -45,8 +47,15 @@ public class alumno {
         return correo;
     }
 
-    public boolean isDiscapacidad() {
-        return discapacidad;
+    public String getDiscapacidad() {
+        if(discapacidad==true)
+            return "Si";
+        else
+            return "No";
+    }
+
+    public String getSexo(){
+        return sexo;
     }
 
 }
