@@ -1,5 +1,9 @@
 package alumnos;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+
 public class alumno {
     private String nombre;
     private String apaterno;
@@ -22,6 +26,8 @@ public class alumno {
         this.sexo = sexo;
         this.discapacidad = discapacidad;
     }
+
+
 
     public String getNombre() {
         return nombre;
@@ -56,6 +62,32 @@ public class alumno {
 
     public String getSexo(){
         return sexo;
+    }
+
+    public int getEdad(){
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        String curp = getCURP();
+
+        String año = curp.substring(4,6);
+        String mes = curp.substring(6,8);
+        String dia = curp.substring(8,10);
+
+        int años = Integer.parseInt(año);
+
+        if(años >= 0 &&  años <= 23){
+            año = "20" + año;
+        }else{
+            año = "19" + año;
+        }
+
+        String fechaCurp = dia + "/" + mes + "/" + año;
+
+        LocalDate fechaNac = LocalDate.parse(fechaCurp, fmt);
+        LocalDate ahora = LocalDate.now();
+
+        Period edad = Period.between(fechaNac, ahora);
+        return edad.getYears();
     }
 
 }
